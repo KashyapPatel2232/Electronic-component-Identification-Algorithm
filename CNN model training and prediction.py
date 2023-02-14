@@ -2,12 +2,13 @@ import os
 import cv2
 import numpy as np
 from sklearn.model_selection import train_test_split
-from tensorflow.keras.utils import to_categorical
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
+from keras import models
+from keras.utils import to_categorical
+from keras.models import Sequential
+from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 
 # Set the directory for all component images
-all_images_dir = 'all_component_images'
+all_images_dir = "D:\\DRDO (Dare to dream 4.0 competition)\\Electronic component data set\\images"
 
 # Create dictionaries to store the images and labels for each component
 component_images = {}
@@ -78,7 +79,7 @@ test_loss, test_acc = model.evaluate(test_images, test_labels)
 print(f'Test loss: {test_loss}, Test accuracy: {test_acc}')
 
 # Load the testing images and labels
-testing_dir = 'testing_component_images'
+testing_dir = '"D:\\DRDO (Dare to dream 4.0 competition)\\Electronic component data set\\test"'
 testing_images = []
 testing_labels = []
 for component_dir in os.listdir(testing_dir):
